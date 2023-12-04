@@ -1,0 +1,52 @@
+{
+  "name": "appop",
+  "discription": "a really cool app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "18.13.0",
+    "npm": "9.3.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.16",
+    "@chakra-ui/react": "^2.4.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@prisma/client": "^4.9.0",
+    "@react-google-maps/api": "^2.18.1",
+    "bootstrap-icons": "^1.10.3",
+    "chakra-dayzed-datepicker": "^0.2.6",
+    "date-fns": "^2.29.3",
+    "dayzed": "^3.2.3",
+    "framer-motion": "^8.5.0",
+    "fs": "^0.0.1-security",
+    "jspdf": "^2.5.1",
+    "moment": "^2.29.4",
+    "mysql2": "^3.3.1",
+    "native-base": "^3.4.25",
+    "net": "^1.0.2",
+    "next": "13.1.2",
+    "pdf-lib": "^1.17.1",
+    "react": "18.2.0",
+    "react-csv": "^2.2.2",
+    "react-dom": "18.2.0",
+    "react-export-table-to-excel": "^1.0.6",
+    "react-hook-form": "^7.42.1",
+    "react-icons": "^4.7.1",
+    "tls": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "eslint": "8.31.0",
+    "eslint-config-next": "13.1.2",
+    "prisma": "^4.8.1",
+    "typescript": "^4.9.4"
+  }
+}
