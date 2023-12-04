@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import moment from "moment"
+import moment from "moment";
 import {
   Center,
   VStack,
@@ -37,14 +37,14 @@ export default function Index() {
 
   const [fetchData, setFetchData] = useState([]);
   const [dateStart, setDateStart] = useState(
-    new Date(moment().add(1, 'months').format("YYYY-MM-")+nextMonthDay1)
+    new Date(moment().add(1, "months").format("YYYY-MM-") + nextMonthDay1)
   );
   const [dateEnd, setDateEnd] = useState(
-    new Date(moment().add(1, 'months').format("YYYY-MM-")+ nextMonthLastDay)
+    new Date(moment().add(1, "months").format("YYYY-MM-") + nextMonthLastDay)
   );
 
-  console.log(moment().add(1, 'months').format("YYYY-MM-DD"))
-  console.log(currentYear + "-" + nextMonth + "-" + nextMonthLastDay)
+  console.log(moment().add(1, "months").format("YYYY-MM-DD"));
+  console.log(currentYear + "-" + nextMonth + "-" + nextMonthLastDay);
 
   //   const [dateStart, setDateStart] = useState(
   //   new Date("2023-11-01")
@@ -78,8 +78,6 @@ export default function Index() {
     const expiryDate = new Date(dateFormatNeeded).getUTCDate();
     //console.log("expiryYear", expiryYear);
     return expiryYear + "-" + expiryMonth + "-" + expiryDate;
-
-    
   };
 
   const handle_Search = async () => {
@@ -107,7 +105,7 @@ export default function Index() {
           <Flex borderWidth={"0px"} w="250px" h={"full"}>
             <ListCount count={fetchData.length} />
           </Flex>
-          {/* <SingleDatepicker
+          <SingleDatepicker
             name="date-start"
             date={dateStart}
             onDateChange={setDateStart}
@@ -116,7 +114,7 @@ export default function Index() {
             name="date-end"
             date={dateEnd}
             onDateChange={setDateEnd}
-          /> */}
+          />
           <HStack>
             <Button
               width={"250px"}
@@ -197,7 +195,9 @@ export default function Index() {
                     "-" +
                     applicant.phone.substring(3 + 3, 3 + 3 + 4);
 
-                   const addressUnitNo = applicant.addressLine2?("# " + applicant.addressLine2 + " - " ) : ""
+                  const addressUnitNo = applicant.addressLine2
+                    ? "# " + applicant.addressLine2 + " - "
+                    : "";
 
                   const bgclr =
                     dateStart <= new Date(latestPermitExpiryDate) &&
@@ -243,8 +243,11 @@ export default function Index() {
                       <Td>
                         {getAge(applicant.dateOfBirth, latestPermitExpiryDate)}
                       </Td>
-                      <Td>{addressUnitNo}{applicant.addressLine1}</Td>
-                      
+                      <Td>
+                        {addressUnitNo}
+                        {applicant.addressLine1}
+                      </Td>
+
                       <Td>{applicant.city}</Td>
                       <Td>{applicant.province}</Td>
                       <Td>{applicant.postalCode}</Td>
