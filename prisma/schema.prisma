@@ -402,10 +402,11 @@ enum Role {
 }
 
 enum ApplicationStatus {
-  PENDING
-  IN_PROGRESS
-  REJECTED
   COMPLETED
+  IN_PROGRESS
+  PENDING
+  REJECTED
+  
 
   @@map("applicationstatus")
 }

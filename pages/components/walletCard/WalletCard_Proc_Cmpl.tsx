@@ -123,7 +123,7 @@ export default function WalletCard_Proc_Cmpl({ apiUrl }) {
                       User #:
                     </Text>
                     <Text w={"100PX"} fontWeight={"bold"} align={"left"}>
-                      {application.applicant ? application.applicant.id : ""}
+                      {application.applicant ? application.applicant.id : ""} {JSON.stringify(application.applicationProcessing)}
                     </Text>
                   </HStack>
                   <HStack borderWidth={0} align="center">

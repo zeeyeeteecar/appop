@@ -13,10 +13,9 @@ export default async function handle(req: any, res: any) {
     where: {
       applicationProcessing: {
         status: "IN_PROGRESS",
-
       },
 
-      // application: {
+      // newApplication: {
       //   firstName: "Claire",
       // },
     },
@@ -49,7 +48,7 @@ export default async function handle(req: any, res: any) {
       permit: {
         select: { rcdPermitId: true, expiryDate: true },
       },
-      applicant: { select: { dateOfBirth: true,id:true } },
+      applicant: { select: { dateOfBirth: true, id: true } },
     },
   });
 

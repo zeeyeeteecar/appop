@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { prisma } from "../prisma";
+import { equal } from "assert";
 //import { PrismaClient } from "@prisma/client";
-//const prisma = new PrismaClient();
 
 export default async function handle(req: any, res: any) {
+  //let foo: Status prisma.ApplicationStatus.COMPLETED
+  //let foo: Status = "superadmin";
+
   //const prisma = new PrismaClient();
   //await prisma.$connect();
   const {} = req.body;
@@ -13,13 +16,13 @@ export default async function handle(req: any, res: any) {
     where: {
       applicationProcessing: {
         status: "COMPLETED",
-
+        //status: prisma.ApplicationStatus.COMPLETED,
       },
-
-      // application: {
+      // applicant: {
       //   firstName: "Claire",
       // },
     },
+
     select: {
       // id: true,
       // status: true,
@@ -49,11 +52,13 @@ export default async function handle(req: any, res: any) {
       permit: {
         select: { rcdPermitId: true, expiryDate: true },
       },
-      applicant: { select: { dateOfBirth: true,id:true } },
+      applicant: { select: { dateOfBirth: true, id: true } },
+      applicationProcessing: {
+        select: { status: true },
+      },
     },
-    orderBy:{id:"desc"},
-    take:30,
-
+    orderBy: { id: "desc" },
+    take: 30,
   });
 
   await prisma.$disconnect();
