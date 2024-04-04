@@ -117,7 +117,6 @@ export default function PrintButton({ application }: any) {
           textAlign="center"
           color={fontclr}
           borderWidth={0}
-          
         >
           <Text w={"100%"} align={"center"}>
             {permitType}
@@ -135,7 +134,6 @@ export default function PrintButton({ application }: any) {
             }}
             onClick={() => GeneratePDF(application)}
             isDisabled={btnDisabled}
-            
           />
         </Tag>
       </VStack>
