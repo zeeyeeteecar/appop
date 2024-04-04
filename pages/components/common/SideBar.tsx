@@ -132,12 +132,8 @@ const SidebarContent = ({ ...props }: BoxProps) => (
             <Image src="/coffee_3.png" alt="take 5 mins break" />
           </MenuButton>
           <MenuList fontSize={20} zIndex={5555}>
-            <MenuItem as={Link} to="#">
-              My profile
-            </MenuItem>
-            <MenuItem as={Link} to="#">
-              Change password
-            </MenuItem>
+            <MenuItem as={Link}>My profile</MenuItem>
+            <MenuItem as={Link}>Change password</MenuItem>
             <MenuItem>Logout</MenuItem>
           </MenuList>
         </Menu>
